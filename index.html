@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Teste Enext</title>
+    <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
+    <script src="assets/js/lib/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/lib/modernizr-custom.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script><!--[if IE 8]>
+        <body class="ie ie8"></body><![endif]--><!--[if IE 9]>
+        <body class="ie ie9"></body><![endif]-->
+  </head>
+  <body ng-controller="ctrl">
+    <!-- HEADER-->
+    <div class="header-main">
+      <div class="gridD">
+        <div class="logo"><a href="#" title=""><img src="assets/img/logo.jpg" alt="" title=""></a></div>
+        <div class="search-top">
+          <form>
+            <input type="text" placeholder="Search our stock">
+            <button type="submit"> </button>
+          </form>
+        </div>
+        <div class="cart-top-sec">
+          <div class="msg">
+            <p>Free shipping<br><span>on orders over $50</span></p>
+          </div>
+          <div class="icon-cart"></div>
+          <div class="product-itens">
+            <h2>bag: <span>1</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-main-mobile">
+      <div class="gridD">
+        <div class="btn-mobile"></div>
+        <div class="logo"><a href="#" title=""><img src="assets/img/logo.jpg" alt="" title=""></a></div>
+        <div class="msg">
+          <p>Free shipping <span>on orders over $50</span></p>
+        </div>
+        <div class="icon-cart"></div>
+        <div class="product-itens">
+          <h2>bag: <span>1</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="nav-main">
+      <div class="gridD">
+        <nav>
+          <ul>
+            <li><a href="#">Potions</a></li>
+            <li><a href="#">Ingredients</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Supplies</a></li>
+            <li><a href="#">Charms</a></li>
+            <li><a href="#">Clearance!</a></li>
+          </ul>
+        </nav>
+        <div class="login"><a href="#">Sign In</a>
+          <p>or</p><a href="#">Sign Up</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-main-mobile">
+      <div class="search-top">
+        <div class="close-mobile"></div>
+        <form>
+          <input type="text" placeholder="Search our stock">
+          <button type="submit"> </button>
+        </form>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Potions</a></li>
+          <li><a href="#">Ingredients</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Supplies</a></li>
+          <li><a href="#">Charms</a></li>
+          <li><a href="#">Clearance!</a></li>
+        </ul>
+      </nav>
+      <div class="login"><a href="#">Sign In</a>
+        <p>or</p><a href="#">Sign Up</a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="gridD">
+        <div class="title-page">
+          <h2>Potions</h2>
+        </div>
+        <div class="products">
+          <div onclick="openModal();currentSlide(1)" class="product"><img src="assets/img/products/aging-potion.png" alt="" title="">
+            <div class="infos">
+              <p>Aging Potion - <span>$29.99</span></p>
+            </div>
+          </div>
+          <div onclick="openModal();currentSlide(2)" class="product"><img src="assets/img/products/bulgeye-potion.png" alt="" title="">
+            <div class="infos">
+              <p>Bulgeye Potion - <span>$19.99</span></p>
+            </div>
+          </div>
+          <div onclick="openModal();currentSlide(3)" class="product"><img src="assets/img/products/dragon-tonic.png" alt="" title="">
+            <div class="infos">
+              <p>Dragon Tonic - <span>$64.99</span></p>
+            </div>
+          </div>
+          <div onclick="openModal();currentSlide(4)" class="product"><img src="assets/img/products/love-potion.png" alt="" title="">
+            <div class="infos">
+              <p>Love Potion - <span>$29.99</span></p>
+            </div>
+          </div>
+          <div onclick="openModal();currentSlide(5)" class="product"><img src="assets/img/products/polyjuice-potion.png" alt="" title="">
+            <div class="infos">
+              <p>Polyjuice Potion - <span>$99.99</span></p>
+            </div>
+          </div>
+          <div onclick="openModal();currentSlide(6)" class="product"><img src="assets/img/products/sleeping-draught.png" alt="" title="">
+            <div class="infos">
+              <p>Sleeping Draught - <span>$29.99</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <!-- FOOTER-->
+    <footer>
+      <div class="gridD">
+        <div class="left">
+          <div class="nav-footer">
+            <ul>
+              <li><a href="#" title="">Company</a></li>
+              <li><a href="#" title="">Contact us</a></li>
+              <li><a href="#" title="">Shipping</a></li>
+              <li><a href="#" title="">Returns</a></li>
+              <li><a href="#" title="">Carrers</a></li>
+            </ul>
+          </div>
+          <div class="social-footer"><a href="#" title=""></a><a href="#" title=""></a><a href="#" title=""></a><a href="#" title=""></a><a href="#" title=""></a></div>
+          <div class="copyright">
+            <p>© 2015 Merlin's Portions. All Rights Reserved</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="form-footer">
+            <div class="title">
+              <h2>Sign up for our Newsletter</h2>
+            </div>
+            <form>
+              <legend>Sign up for our newsletter & get exclusive discounts!</legend>
+              <input type="text" placeholder="Enter your email">
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div id="modal" class="modal">
+        <div class="modal-content gridD"><span onclick="closeModal()" class="close cursor">&times;</span>
+          <div ng-repeat="product in products" class="slides">
+            <div class="left"><img src="assets/img/products/{{product.image}}"></div>
+            <div class="right">
+              <div class="description">
+                <div class="name">
+                  <h2>{{product.name}}</h2>
+                </div>
+                <div class="effect">
+                  <h2>Use/Effect:</h2>
+                  <p>{{product.effect}}</p>
+                </div>
+                <div class="ingredients">
+                  <h2>Ingredients:</h2>
+                  <p>{{product.ingredients}}</p>
+                </div>
+                <div class="price">
+                  <h2>Price:</h2>
+                  <p>${{product.price}}</p>
+                </div>
+                <div class="btn-cart"><a href="#">Add to cart</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </footer>
+    <!-- INCLUDE JS-->
+    <script type="text/javascript" src="assets/js/min/script.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,503 @@
+@import "bourbon/bourbon"
+@import "neat/neat"
+
+//  FONTS
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
+
+@include font-face("DroidSans", "fonts/DroidSans")
+
+$fontOswald: 'Oswald', sans-serif;
+$fontDroid: 'Droid Sans';
+
+// VARIABLES
+
+
+
+
+//  COLORS
+
+$white: #ffffff
+$black: #000000
+$gray: #333333
+$red: #d84024
+$lightGray: #b7b3b3
+$purple: #523468
+$darkPurple: #422a53
+
+// EXTENDS CLASSES
+.hide
+	opacity: 0
+	visibility: hidden
+.show
+	opacity: 1
+	visibility: visible
+.transDefault
+	@include transition(all .2s ease-out);
+.circle
+	@include border-top-radius(50%)
+	@include border-bottom-radius(50%)
+.blockCenter
+	margin-left: auto
+	margin-right: auto
+.fleft
+	float: left
+.fright
+	float: right
+.clearfix
+	clear: both
+.borderFive
+	@include border-top-radius(10px)
+	@include border-bottom-radius(10px)
+
+
+//  RESPONSIVE GRID
+$desktop-lg: new-breakpoint(min-width 993px 16)
+$desktop-md: new-breakpoint(max-width 992px 12)
+$tablet: new-breakpoint(max-width 768px 10)
+$mobile: new-breakpoint(max-width 480px 8)
+
+
+.gridE
+	width: 90%
+	@extend .blockCenter
+
+.gridD
+	max-width: 960px
+	@extend .blockCenter
+
+// RESET
+
+*
+	margin: 0
+	padding: 0
+html
+	height: 100%
+	overflow-x: hidden
+	object
+		display: none
+body
+	position: relative
+	overflow-x: hidden
+a
+	text-decoration: none
+a, button, input, textarea
+	outline: none
+
+section
+	height: 100%
+	height: 100vh
+// MSG IE
+.msgUpdateIE
+	display: none
+img
+	border: 0
+
+// ::-webkit-scrollbar
+//   width: 10px;
+//   height: 10px;
+//   background: $white
+
+// ::-webkit-scrollbar-thumb
+//   cursor: pointer;
+//   background: $orange;
+
+
+ 
+// HEADER FULL MAIN //
+.header-main
+	padding: 30px 0
+	min-height: 120px
+	+media($mobile)
+		display: none
+	.logo
+		+span-columns(4)
+	.search-top
+		+span-columns(4)
+		form
+			position: relative
+			margin-left: -30px
+			input
+				+size(280px 40px)
+				border: 1px solid $gray
+				font-family: 'Open Sans', sans-serif;
+				+border-top-radius(5px)
+				+border-bottom-radius(5px)
+				padding-left: 45px
+				padding-right: 10px
+			button
+				+position(absolute, 10px null null 15px)
+				background-image: url(../img/sprite.png)
+				background-position: 0 0
+				+size(35px 35px)
+				background-color: transparent
+				border: 0
+				cursor: pointer
+	.cart-top-sec
+		+span-columns(4)
+		.msg
+			float: left
+			p
+				font-family: $fontDroid
+				color: $red
+				font-style: italic
+				font-size: 24px;
+				line-height: 24px;
+				span
+					font-size: 16px;
+					font-family: 'Open Sans', sans-serif;
+		.icon-cart
+			float: left
+			+size(45px 45px)
+			background-image: url(../img/sprite.png)
+			background-position: 0px -45px
+			margin-left: 25px
+		.product-itens
+			margin-left: 20px
+			float: left
+			padding-top: 5px
+			h2
+				text-transform: uppercase
+				font-size: 22px
+				font-family: 'Open Sans', sans-serif;
+				color: $lightGray
+				font-weight: 200
+				span
+					color: $red
+					font-weight: 800
+.header-main-mobile
+	padding: 30px 0
+	min-height: 120px
+	display: none
+	position: relative
+	+media($mobile)
+		display: block
+	.btn-mobile
+		+position(absolute, 20px null null 10px)
+		+size(45px 45px)
+		background-image: url(../img/sprite.png)
+		background-position: 0px -95px
+	.logo
+		+span-columns(12)
+		img
+			display: block
+			margin: 0 auto
+			max-width: 220px
+	.msg
+		float: left
+		display: block
+		width: 100%
+		margin-top: 30px
+		text-align: center
+		background-color: #ececec
+		padding: 5px 0
+		p
+			font-family: $fontDroid
+			color: #8e8e8e
+			font-style: italic
+			font-size: 20px;
+			line-height: 24px;
+			font-weight: 800
+			span
+				font-size: 16px;
+				font-family: 'Open Sans', sans-serif;
+	.icon-cart
+		+position(absolute, 20px 10px null null)
+		+size(45px 45px)
+		background-image: url(../img/sprite.png)
+		background-position: 0px -45px
+		
+	.product-itens
+		+position(absolute, 60px 12px null null)
+		padding-top: 5px
+		h2
+			text-transform: uppercase
+			font-size: 14px
+			font-family: 'Open Sans', sans-serif;
+			color: $lightGray
+			span
+				color: $red
+
+
+
+.nav-main
+	+size(100% 70px)
+	background-color: $purple
+	+media($mobile)
+		display: none
+	nav
+		padding: 14px 0
+		+span-columns(9)
+		ul
+			display: block
+			li
+				display: inline-block
+				list-style-type: none
+				padding: 12px 0
+				a
+					color: $white
+					font-family: $fontDroid
+					font-size: 18px
+					font-weight: 200
+					font-style: italic
+					+transition(all .2s ease)
+					padding: 18px 12px
+					+border-top-radius(5px)
+					+border-bottom-radius(5px)	
+					&:hover
+						background-color: $darkPurple
+					&:after
+						content: "";
+						display: inline-block;
+						vertical-align: middle;
+						margin-left: 10px;
+						width: 0; 
+						height: 0; 
+						border-left: 5px solid transparent;
+						border-right: 5px solid transparent;
+						border-top: 5px solid $white;
+				&:last-child
+					a
+						&:after
+							display: none
+	.login
+		+span-columns(3)
+		padding: 12px 0
+		margin-right: 15px
+		a,p
+			float: left
+			color: $white
+			font-family: $fontDroid
+			font-size: 18px
+			font-weight: 200
+			font-style: italic
+			padding: 12px 0
+			margin: 0 10px
+			+transition(all .2s ease)
+			position: relative
+			&:before
+				+position(absolute, null null 10px 0)
+				+size(0px 1px)
+				background-color: $white
+				content: ' '
+				+transition(all .2s ease)
+			&:hover
+				color: #c1a8bb
+				&:before
+					width: 100%
+		p
+			color: #c1a8bb
+			&:before
+				display: none
+
+.nav-main-mobile
+	+position(fixed, -80vh 0 0 0)
+	z-index: 99
+	background-color: $purple
+	display: none
+	+size(100% 80vh)
+	+transition(all .4s ease)
+	+media($mobile)
+		display: block
+	.search-top
+		background-color: $white
+		+size(100% 85px)
+		padding: 25px 70px
+		.close-mobile
+			+position(absolute, 20px null null 10px)
+			+size(45px 45px)
+			background-image: url(../img/sprite.png)
+			background-position: 0 -150px
+		form
+			position: relative
+			input
+				+size(280px 40px)
+				border: 1px solid $gray
+				font-family: 'Open Sans', sans-serif;
+				+border-top-radius(5px)
+				+border-bottom-radius(5px)
+				padding-left: 45px
+				padding-right: 10px
+			button
+				+position(absolute, 10px null null 15px)
+				background-image: url(../img/sprite.png)
+				background-position: 0 0
+				+size(35px 35px)
+				background-color: transparent
+				border: 0
+				cursor: pointer
+	nav
+		padding: 14px 0
+		+span-columns(12)
+		ul
+			display: block
+			li
+				display: inline-block
+				list-style-type: none
+				padding: 15px 20px
+				border-bottom: 1px solid #6a5483
+				width: 100%
+				a
+					color: $white
+					font-family: $fontDroid
+					font-size: 18px
+					font-weight: 200
+					font-style: italic
+					+transition(all .2s ease)
+					padding: 15px 30px
+					+border-top-radius(5px)
+					+border-bottom-radius(5px)	
+					&:hover
+						background-color: $darkPurple
+	.login
+		+span-columns(12)
+		padding: 12px 0
+		text-align: center
+		margin-top: 10px
+		a,p
+			display: inline-block
+			color: $white
+			font-family: $fontDroid
+			font-size: 18px
+			font-weight: 200
+			font-style: italic
+			padding: 12px 0
+			margin: 0 10px
+			+transition(all .2s ease)
+			position: relative
+			&:before
+				+position(absolute, null null 10px 0)
+				+size(0px 1px)
+				background-color: $white
+				content: ' '
+				+transition(all .2s ease)
+			&:hover
+				color: #c1a8bb
+				&:before
+					width: 100%
+		p
+			color: #c1a8bb
+			&:before
+				display: none
+footer
+	padding: 50px 0
+	+size(100% auto)
+	background-color: #e6e6e6
+	+media($mobile)
+		min-height: 350px
+		position: relative
+	.left
+		+span-columns(6)
+		+media($mobile)
+			+position(absolute, null null 40px 0)
+			+size(100% auto)
+		.nav-footer
+			+span-columns(12)
+			+media($mobile)
+				display: none
+			ul
+				display: block
+				li
+					display: inline-block
+					a
+						color: $red
+						font-size: 22px
+						font-family: 'Open Sans', sans-serif;
+						text-transform: uppercase
+						margin-right: 30px
+						font-weight: 800
+		.social-footer
+			margin-top: 25px
+			+span-columns(12)
+			a
+				float: left
+				background-image: url(../img/sprite.png)
+				margin-right: 25px
+				background-position: 0 0
+				+size(40px 40px)
+				&:nth-of-type(1)
+					background-position: -60px 0px
+				&:nth-of-type(2)
+					background-position: -120px 0px
+				&:nth-of-type(3)
+					background-position: -180px 0px
+				&:nth-of-type(4)
+					background-position: -240px 0px
+				&:nth-of-type(5)
+					background-position: -298px 0px
+			+media($mobile)
+				text-align: center;
+				a
+					display: inline-block
+					float: initial
+					margin: 0 10px
+		.copyright
+			margin-top: 60px
+			+span-columns(12)
+			p
+				color: $gray
+				font-size: 16px
+				font-family: 'Open Sans', sans-serif
+				margin-right: 30px
+				font-weight: 800
+			+media($mobile)
+				text-align: center
+				margin-top: 20px
+				p
+					margin-right: 0
+					font-size: 14px
+	.right
+		+span-columns(6)
+		+media($mobile)
+			+position(absolute, 0 null null 0)
+			+size(90% auto)
+		.form-footer
+			padding: 25px
+			+border-top-radius(5px)
+			+border-bottom-radius(5px)
+			background-color: $white
+			float: right
+			+span-columns(12)
+			+media($mobile)
+				+position(absolute, 0 null null 0)
+				margin: 5%
+			.title
+				h2
+					color: $black
+					font-family: $fontDroid
+					font-size: 22px
+					font-weight: 200
+					font-style: italic
+					+media($mobile)
+						font-size: 18px
+			form
+				margin-top: 20px
+				legend
+					color: $black
+					font-family: 'Open Sans', sans-serif;
+					font-size: 16px
+					margin-bottom: 15px
+					font-weight: 200
+					+media($mobile)
+						font-size: 12px
+				input
+					+span-columns(9)
+					height: 40px
+					border: 1px solid $gray
+					font-family: 'Open Sans', sans-serif;
+					+border-top-radius(5px)
+					+border-bottom-radius(5px)
+					padding: 0 10px
+				button
+					border: 0
+					height: 40px
+					background-color: red
+					+span-columns(3)
+					text-transform: uppercase
+					+border-top-radius(5px)
+					+border-bottom-radius(5px)
+					color: $white
+					cursor: pointer
+.opened-nav
+	.nav-main-mobile
+		top: 0

@@ -1,0 +1,50 @@
+doctype html
+html(lang="pt-br" ng-app="myapp")
+	include ./includes/head.jade
+	
+
+	body(ng-controller="ctrl")
+		//- // HEADER
+		include ./includes/header.jade
+		
+		.content
+			.gridD
+				.title-page
+					h2 Potions
+				.products
+					
+					.product(onclick="openModal();currentSlide(1)")
+						img(src="assets/img/products/aging-potion.png", alt="", title="")
+						.infos
+							p Aging Potion - <span>$29.99</span>
+					
+					.product(onclick="openModal();currentSlide(2)")
+						img(src="assets/img/products/bulgeye-potion.png", alt="", title="")
+						.infos
+							p Bulgeye Potion - <span>$19.99</span>
+					
+					.product(onclick="openModal();currentSlide(3)")
+						img(src="assets/img/products/dragon-tonic.png", alt="", title="")
+						.infos
+							p Dragon Tonic - <span>$64.99</span>
+
+					.product(onclick="openModal();currentSlide(4)")
+						img(src="assets/img/products/love-potion.png", alt="", title="")
+						.infos
+							p Love Potion - <span>$29.99</span>
+
+					.product(onclick="openModal();currentSlide(5)")
+						img(src="assets/img/products/polyjuice-potion.png", alt="", title="")
+						.infos
+							p Polyjuice Potion - <span>$99.99</span>
+
+					.product(onclick="openModal();currentSlide(6)")
+						img(src="assets/img/products/sleeping-draught.png", alt="", title="")
+						.infos
+							p Sleeping Draught - <span>$29.99</span>
+			.clearfix
+		//- // FOOTER
+		include ./includes/footer.jade
+
+		// INCLUDE JS
+		include ./includes/foot.jade

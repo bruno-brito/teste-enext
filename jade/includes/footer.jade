@@ -1,0 +1,56 @@
+// FOOTER
+footer
+	.gridD
+		.left
+			.nav-footer
+				ul
+					li
+						a(href="#", title="") Company
+					li
+						a(href="#", title="") Contact us
+					li
+						a(href="#", title="") Shipping
+					li
+						a(href="#", title="") Returns
+					li
+						a(href="#", title="") Carrers
+			.social-footer
+				a(href="#", title="")
+				a(href="#", title="")
+				a(href="#", title="")
+				a(href="#", title="")
+				a(href="#", title="")
+			.copyright
+				p © 2015 Merlin's Portions. All Rights Reserved
+		.right
+			.form-footer
+				.title
+					h2 Sign up for our Newsletter
+				form
+					legend Sign up for our newsletter & get exclusive discounts!
+					input(type="text", placeholder="Enter your email")
+					button(type="submit") Submit
+	.clearfix
+	#modal.modal
+		.modal-content.gridD
+			span.close.cursor(onclick="closeModal()")&times;
+			.slides(ng-repeat="product in products")
+				.left
+					<img src="assets/img/products/{{product.image}}">
+				.right
+					.description
+						.name
+							h2 {{product.name}}
+						.effect
+							h2 Use/Effect:
+							p {{product.effect}}
+						.ingredients
+							h2 Ingredients:
+							p {{product.ingredients}}
+						.price
+							h2 Price:
+							p ${{product.price}}
+						.btn-cart
+							a(href="#") Add to cart
+
+		.clearfix

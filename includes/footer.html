@@ -1,0 +1,62 @@
+
+<!-- FOOTER-->
+<footer>
+  <div class="gridD">
+    <div class="left">
+      <div class="nav-footer">
+        <ul>
+          <li><a href="#" title="">Company</a></li>
+          <li><a href="#" title="">Contact us</a></li>
+          <li><a href="#" title="">Shipping</a></li>
+          <li><a href="#" title="">Returns</a></li>
+          <li><a href="#" title="">Carrers</a></li>
+        </ul>
+      </div>
+      <div class="social-footer"><a href="#" title=""></a><a href="#" title=""></a><a href="#" title=""></a><a href="#" title=""></a><a href="#" title=""></a></div>
+      <div class="copyright">
+        <p>© 2015 Merlin's Portions. All Rights Reserved</p>
+      </div>
+    </div>
+    <div class="right">
+      <div class="form-footer">
+        <div class="title">
+          <h2>Sign up for our Newsletter</h2>
+        </div>
+        <form>
+          <legend>Sign up for our newsletter & get exclusive discounts!</legend>
+          <input type="text" placeholder="Enter your email"/>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div id="modal" class="modal">
+    <div class="modal-content gridD"><span onclick="closeModal()" class="close cursor">&times;</span>
+      <div ng-repeat="product in products" class="slides">
+        <div class="left"><img src="assets/img/products/{{product.image}}"></div>
+        <div class="right">
+          <div class="description">
+            <div class="name">
+              <h2>{{product.name}}</h2>
+            </div>
+            <div class="effect">
+              <h2>Use/Effect:</h2>
+              <p>{{product.effect}}</p>
+            </div>
+            <div class="ingredients">
+              <h2>Ingredients:</h2>
+              <p>{{product.ingredients}}</p>
+            </div>
+            <div class="price">
+              <h2>Price:</h2>
+              <p>${{product.price}}</p>
+            </div>
+            <div class="btn-cart"><a href="#">Add to cart</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</footer>

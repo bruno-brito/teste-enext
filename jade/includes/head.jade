@@ -1,0 +1,53 @@
+head
+	meta(charset="utf-8")
+	meta(name="viewport", content="width=device-width,initial-scale=1.0")
+	title Teste Enext
+	//- //- for Google
+	//- meta(name="description", content="")
+	//- meta(name="keywords", content="")
+
+	//- meta(name="author", content="")
+	//- meta(name="copyright", content="")
+	//- meta(name="application-name", content="")
+
+	//- //- for Facebook
+	//- meta(property="og:title", content="")
+	//- meta(property="og:type", content="article")
+	//- meta(property="og:image", content="")
+	//- meta(property="og:url", content="")
+	//- meta(property="og:description", content="")
+
+	//- //- for Twitter
+	//- meta(name="twitter:card", content="summary")
+	//- meta(name="twitter:title", content="")
+	//- meta(name="twitter:description", content="")
+	//- meta(name="twitter:image", content="")
+
+	
+	link(href="assets/css/style.min.css", rel="stylesheet", type="text/css")
+	//- link(href="assets/img/favicon.ico", rel="icon", type="image/x-icon")
+	//- link(href="assets/img/favicon.png", rel="icon", type="image/x-icon")
+	script(src="assets/js/lib/jquery-1.11.1.min.js")
+	script(src="assets/js/lib/modernizr-custom.js")
+	script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js")
+	//- IE
+	mixin if-ie(condition)
+		!= "<!--[if " + condition + "]>"
+		block
+		!= "<![endif]-->"
+
+	mixin not-ie
+		!= "<!--[if !IE]> -->"
+		block
+		!= "<!-- <![endif]-->"
+
+	//- +if-ie('IE')
+	//- 	script(src="assets/js/lib/jquery-1.11.1.min.js")
+	+if-ie('IE 8')
+		body.ie.ie8
+	+if-ie('IE 9')
+		body.ie.ie9
+	//- +not-ie
+	//- 	script(src="assets/js/lib/jquery-2.0.3.min.js")
+	//- / IE
+	
